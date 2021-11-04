@@ -1,0 +1,19 @@
+{
+  "name": "tickei-back-end",
+  "version": "1.0.0",
+  "description": "Back-end da aplicação Tickei.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcmatheus/tickei-back-end.git"
+  },
+  "author": "dcmatheus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcmatheus/tickei-back-end/issues"
+  },
+  "homepage": "https://github.com/dcmatheus/tickei-back-end#readme"
+}
