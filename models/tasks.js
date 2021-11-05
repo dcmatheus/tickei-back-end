@@ -14,6 +14,23 @@ const getAll = async () => {
   }
 };
 
+const addTask = async (task) => {
+  const db = await connection();
+  const date = new Date();
+  try {
+    const inserted = await db.collection(collection).insertOne({ ...task, date });
+    return {
+      _id: inserted.insertedId,
+      date,
+      ...task,
+    };
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
 module.exports = {
   getAll,
+  addTask,
 };

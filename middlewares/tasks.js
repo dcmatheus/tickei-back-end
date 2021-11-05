@@ -5,6 +5,13 @@ const getAll = async (_req, res) => {
   return res.status(200).json({ tasks: allProducts });
 };
 
+const addTask = async (req, res) => {
+  const task = req.body;
+  const newTask = await tasks.addTask(task);
+  return res.status(201).json(newTask);
+};
+
 module.exports = {
   getAll,
+  addTask,
 };
