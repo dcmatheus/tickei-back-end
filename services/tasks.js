@@ -15,8 +15,8 @@ const deleteTask = async (id) => {
   return deletedTask;
 };
 
-const editTask = async (id) => {
-  const editedTask = await tasks.editTask(id);
+const editTask = async (id, task) => {
+  const editedTask = await tasks.editTask(id, task);
   return editedTask;
 };
 

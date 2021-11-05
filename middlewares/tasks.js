@@ -19,7 +19,8 @@ const deleteTask = async (req, res) => {
 
 const editTask = async (req, res) => {
   const { id } = req.params;
-  const editedTask = await tasks.editTask(id);
+  const task = req.body;
+  const editedTask = await tasks.editTask(id, task);
   return res.status(200).json(editedTask);
 };
 
