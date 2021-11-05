@@ -11,7 +11,14 @@ const addTask = async (req, res) => {
   return res.status(201).json(newTask);
 };
 
+const deleteTask = async (req, res) => {
+  const { id } = req.params;
+  const deletedTask = await tasks.deleteTask(id);
+  return res.status(200).json(deletedTask);
+};
+
 module.exports = {
   getAll,
   addTask,
+  deleteTask,
 };
