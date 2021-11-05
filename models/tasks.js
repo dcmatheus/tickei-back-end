@@ -45,7 +45,6 @@ const editTask = async (id, task) => {
   const db = await connection();
   const myQuery = { _id: new ObjectId(id) };
   const newValues = { $set: { ...task } };
-  console.log(newValues);
   try {
     const edited = await db.collection(collection).updateMany(myQuery, newValues);
     return edited;
