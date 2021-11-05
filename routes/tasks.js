@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const {
   getAll,
-} = require('./middlewares/tasks');
+} = require('../middlewares/tasks');
 
 router.get('/', getAll);
 
