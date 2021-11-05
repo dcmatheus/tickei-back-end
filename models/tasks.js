@@ -41,8 +41,22 @@ const deleteTask = async (id) => {
   }
 };
 
+const editTask = async (id, task) => {
+  const db = await connection();
+  const myQuery = { _id: new ObjectId(id) };
+  const newValues = { $set: { ...task } };
+  try {
+    const edited = await db.collection(collection).updateMany(myQuery, newValues);
+    return edited;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
 module.exports = {
   getAll,
   addTask,
   deleteTask,
+  editTask,
 };

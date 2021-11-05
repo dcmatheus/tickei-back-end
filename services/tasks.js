@@ -15,8 +15,14 @@ const deleteTask = async (id) => {
   return deletedTask;
 };
 
+const editTask = async (id, task) => {
+  const editedTask = await tasks.editTask(id, task);
+  return editedTask;
+};
+
 module.exports = {
   getAll,
   addTask,
   deleteTask,
+  editTask,
 };
