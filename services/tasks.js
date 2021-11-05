@@ -5,6 +5,12 @@ const getAll = async () => {
   return allTasks;
 };
 
+const addTask = async (task) => {
+  const newTask = await tasks.addTask(task);
+  return newTask;
+};
+
 module.exports = {
   getAll,
+  addTask,
 };
