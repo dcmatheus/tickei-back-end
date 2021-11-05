@@ -43,10 +43,11 @@ const deleteTask = async (id) => {
 
 const editTask = async (id, task) => {
   const db = await connection();
-  const myQuery = new ObjectId(id);
+  const myQuery = { _id: new ObjectId(id) };
   const newValues = { $set: { ...task } };
+  console.log(newValues);
   try {
-    const edited = await db.collection(collection).updateOne(myQuery, newValues);
+    const edited = await db.collection(collection).updateMany(myQuery, newValues);
     return edited;
   } catch (error) {
     console.error(error);
