@@ -1,4 +1,4 @@
-// const { ObjectId } = require('mongodb');
+const { ObjectId } = require('mongodb');
 const connection = require('./connection');
 
 const collection = 'tasks';
@@ -30,7 +30,19 @@ const addTask = async (task) => {
   }
 };
 
+const deleteTask = async (id) => {
+  const db = await connection();
+  try {
+    const deleted = await db.collection(collection).deleteOne({ _id: new ObjectId(id) });
+    return deleted;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
 module.exports = {
   getAll,
   addTask,
+  deleteTask,
 };

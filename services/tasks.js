@@ -10,7 +10,13 @@ const addTask = async (task) => {
   return newTask;
 };
 
+const deleteTask = async (id) => {
+  const deletedTask = await tasks.deleteTask(id);
+  return deletedTask;
+};
+
 module.exports = {
   getAll,
   addTask,
+  deleteTask,
 };
