@@ -12,6 +12,10 @@ app.use(express.json());
 
 app.use('/tasks', tasks);
 
+app.get('/', (_request, response) => {
+  response.send();
+});
+
 app.listen(PORT, () => {
   console.log('Online', PORT);
 });
